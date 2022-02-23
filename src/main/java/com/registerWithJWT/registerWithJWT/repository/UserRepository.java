@@ -1,0 +1,20 @@
+package com.registerWithJWT.registerWithJWT.repository;
+
+
+import com.registerWithJWT.registerWithJWT.entity.User;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface UserRepository extends CrudRepository<User,String> {
+
+
+    @Override
+    List<User> findAll();
+
+    //specify a method that returns User by finding it by email id
+    public User findByEmailId(String emailId);
+
+}
